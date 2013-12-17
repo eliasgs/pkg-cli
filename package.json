@@ -1,6 +1,9 @@
 {
   "name": "pkg-cli",
   "version": "0.1.0",
+  "bin": {
+    "pkg": "bin/pkg.js"
+  },
   "description": "Comman line script for easy package.json access",
   "main": "index.js",
   "scripts": {
