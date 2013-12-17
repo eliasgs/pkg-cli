@@ -1,0 +1,25 @@
+{
+  "name": "pkg-cli",
+  "version": "0.1.0",
+  "description": "Comman line script for easy package.json access",
+  "main": "index.js",
+  "scripts": {
+    "test": "test `node index.js name` = 'pkg-cli' && echo '1 test passed'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/eliasgs/pkg-cli"
+  },
+  "keywords": [
+    "packge.json",
+    "package",
+    "cli",
+    "pkginfo"
+  ],
+  "author": "Elias G. Schneevoigt <eliasgs@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/eliasgs/pkg-cli/issues"
+  },
+  "homepage": "https://github.com/eliasgs/pkg-cli"
+}
