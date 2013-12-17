@@ -16,8 +16,7 @@
   "keywords": [
     "packge.json",
     "package",
-    "cli",
-    "pkginfo"
+    "cli"
   ],
   "author": "Elias G. Schneevoigt <eliasgs@gmail.com>",
   "license": "MIT",
