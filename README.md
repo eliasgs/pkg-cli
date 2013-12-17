@@ -16,5 +16,5 @@ from the package.json found in working directory.
 ### Example
 
 ```bash
-hub create -d $(pkg description)
+hub create -d '$(pkg description)'
 ```
