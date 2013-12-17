@@ -7,7 +7,7 @@
   "description": "Comman line script for easy package.json access",
   "main": "index.js",
   "scripts": {
-    "test": "test `node index.js name` = 'pkg-cli' && echo '1 test passed'"
+    "test": "test `node bin/pkg.js name` = 'pkg-cli' && echo '1 test passed'"
   },
   "repository": {
     "type": "git",
