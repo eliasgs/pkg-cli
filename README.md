@@ -17,7 +17,7 @@ from the package.json found in working directory.
 
 * Create a new github repository with [hub](http://hub.github.com/)
 ```bash
-hub create -d '$(pkg description)'
+hub create -d "$(pkg description)"
 ```
 
 
