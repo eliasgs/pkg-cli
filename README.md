@@ -13,8 +13,15 @@ npm install -g pkg-cli
 Basically it takes the command line arguments and prints the matching field
 from the package.json found in working directory.
 
-### Example
+### Examples
 
+* Create a new github repository with [hub](http://hub.github.com/)
 ```bash
 hub create -d '$(pkg description)'
+```
+
+
+* After bumping the version in package.json, you could commit it by simply doing:
+```bash
+git commit -am v$(pkg version)
 ```
