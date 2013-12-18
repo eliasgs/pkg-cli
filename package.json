@@ -1,6 +1,6 @@
 {
   "name": "pkg-cli",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "bin": {
     "pkg": "bin/pkg.js"
   },
