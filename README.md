@@ -10,7 +10,7 @@ npm install -g pkg-cli
 
 ## Usage
 
-Basically it takes the command line arguments and prints the matching field
+Basically it takes the first command line argument and prints the matching field
 from the package.json found in working directory.
 
 ### Examples
