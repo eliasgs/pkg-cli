@@ -10,8 +10,8 @@ npm install -g pkg-cli
 
 ## Usage
 
-Basically it takes the first command line argument and prints the matching field
-from the package.json found in working directory.
+Basically it takes the first command line argument and prints the matching
+field from the package.json found in the current working directory.
 
 ### Examples
 
@@ -21,7 +21,7 @@ hub create -d "$(pkg description)"
 ```
 
 
-* After bumping the version in package.json, you could commit it by simply doing:
+* After bumping the version in package.json, you could commit it simply by
 ```bash
 git commit -am v$(pkg version)
 ```
