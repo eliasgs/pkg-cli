@@ -3,13 +3,13 @@
 import * as pkg from '../index';
 
 function main() {
-  const result = pkg.get(process.argv[2]);
+  const result = pkg.get(process.argv[2],pkg.path(),false);
   if (result!=='undefined'){
-  console.log(pkg.get(process.argv[2]));
+  console.log(result);
   process.exit(0)
   }
 
-  console.error(`${ (process.argv[2])} returned ${pkg.get(process.argv[2])}}`);
+  console.error(`${ (process.argv[2])} returned ${result}}`);
   process.exit(1)
 }
 main();

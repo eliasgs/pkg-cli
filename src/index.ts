@@ -1,6 +1,10 @@
 import { readFileSync } from 'fs';
-const pkg_path = process.env.PWD + '/package.json';
-function get(arg: string): string {
+export const path = () => process.env.PWD + '/package.json';
+function get(
+  arg: string,
+  pkg_path: string = path(),
+  resilient: boolean = true
+): string {
   // Match all fields and array indexes of arg.
   const props = arg
     .split(/(?:(\w+)\.)|(?:(\w+)\[(\w+)\]\.?)|(?:(\w+)$)/g)
@@ -14,15 +18,18 @@ function get(arg: string): string {
   } catch (error: any) {
     if (error.code === 'ENOENT') {
       console.error(`ENOENT: no such file or directory PATH:${error.path}`);
-      process.exit(3);
+      if (!resilient) process.exit(3);
+      return 'ERROR: ENOENT';
     }
     if (error && typeof error.message === 'string') {
       3;
       console.error(error.message);
-      process.exit(5);
+      if (!resilient) process.exit(5);
+      return 'ERROR';
     }
     console.error('ERROR: operation failed for an unknow reason');
-    process.exit(7);
+    if (!resilient) process.exit(7);
+    return 'FATAL: UNKNOW ERROR';
   }
 }
 
