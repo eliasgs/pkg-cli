@@ -12,9 +12,17 @@ function get(arg: string): string {
     });
     return String(tmp);
   } catch (error: any) {
-    return error && typeof error.message === 'string'
-      ? String(error.message)
-      : 'ERROR: operation failed for an unknow reason';
+    if (error.code === 'ENOENT') {
+      console.error(`ENOENT: no such file or directory PATH:${error.path}`);
+      process.exit(3);
+    }
+    if (error && typeof error.message === 'string') {
+      3;
+      console.error(error.message);
+      process.exit(5);
+    }
+    console.error('ERROR: operation failed for an unknow reason');
+    process.exit(7);
   }
 }
 

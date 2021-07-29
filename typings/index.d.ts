@@ -1,2 +1,2 @@
-declare function get<T = any>(arg: string): T;
+declare function get(arg: string): string;
 export { get };
