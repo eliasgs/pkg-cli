@@ -11,7 +11,6 @@
     "prebuild": "rimraf index.js; rimraf ./bin; rimraf ./typings",
     "build": "tsc",
     "postbuild": "prettier -w 'index.js' && prettier -w 'bin/pkg.js'",
-    "postinstall": "npm run build",
     "test": "test `node bin/pkg.js name` = 'pkg-cli' && echo '1 test passed'"
   },
   "devDependencies": {
