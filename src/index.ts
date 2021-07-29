@@ -1,8 +1,8 @@
 import { readFileSync } from 'fs';
-export const path = () => process.env.PWD + '/package.json';
+const defaultPath = () => process.env.PWD + '/package.json';
 function get(
   arg: string,
-  pkg_path: string = path(),
+  pkg_path: string = defaultPath(),
   resilient: boolean = true
 ): string {
   // Match all fields and array indexes of arg.
@@ -32,5 +32,4 @@ function get(
     return 'FATAL: UNKNOW ERROR';
   }
 }
-
-export { get };
+export const pkg = { get, path: defaultPath };

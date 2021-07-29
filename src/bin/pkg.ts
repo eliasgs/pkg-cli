@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-import * as pkg from '../index';
+import { pkg } from '../index';
 
 function main() {
   const result = pkg.get(process.argv[2],pkg.path(),false);
