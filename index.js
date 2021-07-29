@@ -1,11 +1,17 @@
 'use strict';
 exports.__esModule = true;
-exports.get = void 0;
+exports.get = exports.path = void 0;
 var fs_1 = require('fs');
-var pkg_path_ = process.env.PWD + '/package.json';
-function get(arg, pkg_path) {
+var path = function () {
+  return process.env.PWD + '/package.json';
+};
+exports.path = path;
+function get(arg, pkg_path, resilient) {
   if (pkg_path === void 0) {
-    pkg_path = pkg_path_;
+    pkg_path = exports.path();
+  }
+  if (resilient === void 0) {
+    resilient = true;
   }
   // Match all fields and array indexes of arg.
   var props = arg
@@ -22,15 +28,18 @@ function get(arg, pkg_path) {
   } catch (error) {
     if (error.code === 'ENOENT') {
       console.error('ENOENT: no such file or directory PATH:' + error.path);
-      process.exit(3);
+      if (!resilient) process.exit(3);
+      return 'ERROR: ENOENT';
     }
     if (error && typeof error.message === 'string') {
       3;
       console.error(error.message);
-      process.exit(5);
+      if (!resilient) process.exit(5);
+      return 'ERROR';
     }
     console.error('ERROR: operation failed for an unknow reason');
-    process.exit(7);
+    if (!resilient) process.exit(7);
+    return 'FATAL: UNKNOW ERROR';
   }
 }
 exports.get = get;

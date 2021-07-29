@@ -40,14 +40,12 @@ var __importStar =
 exports.__esModule = true;
 var pkg = __importStar(require('../index'));
 function main() {
-  var result = pkg.get(process.argv[2]);
+  var result = pkg.get(process.argv[2], pkg.path(), false);
   if (result !== 'undefined') {
-    console.log(pkg.get(process.argv[2]));
+    console.log(result);
     process.exit(0);
   }
-  console.error(
-    process.argv[2] + ' returned ' + pkg.get(process.argv[2]) + '}'
-  );
+  console.error(process.argv[2] + ' returned ' + result + '}');
   process.exit(1);
 }
 main();
