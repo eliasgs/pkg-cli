@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-
-var pkg = require('../index');
-
-console.log(pkg.get(process.argv[2]));
+'use strict';
+exports.__esModule = true;
+var index_1 = require('../index');
+console.log(index_1.get(process.argv[2]));
