@@ -1,0 +1,32 @@
+{
+  "compilerOptions": {
+    /* Basic Options */
+    "noEmit": false,
+    "target": "es3",
+    "module": "commonjs",
+    "outDir": "./",
+    "rootDir": "./src",
+    "declaration": true,
+    "declarationDir": "./typings",
+    /* Incremental compilation */
+    "incremental": true,
+    "tsBuildInfoFile": "./typings/.tsbuildinfo.lib",
+    "generateCpuProfile": "./typings/profile.cpuprofile",
+    /* Strict Type-Checking Options */
+    "strict": true,
+    /* Module Resolution Options */
+    "esModuleInterop": true,
+    /* Advanced Options */
+    "removeComments": false,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+  },
+  "exclude": [
+    "./typings",
+    "./bin",
+    "index.js"
+  ],
+  "include": [
+    "src"
+  ]
+}
